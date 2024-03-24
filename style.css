@@ -1,0 +1,43 @@
+   h1{
+    text-align: center;
+   }
+  .tabuleiro {
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  .tabuleiro td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+  }
+  .branco {
+    background-color: #fff;
+  }
+  .preto {
+    background-color: #000;
+    color: #fff;
+  }
+  .cursor {
+    background-color: yellow;
+  }
+  .acerto {
+    background-color: green;
+    color: white;
+  }
+  .erro {
+    background-color: red;
+    color: white;
+  }
+  #teclado {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .tecla {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+  }

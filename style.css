@@ -1,9 +1,14 @@
    h1{
     text-align: center;
    }
-  .tabuleiro {
+  #tabuleiro {
     border-collapse: collapse;
     margin: 0 auto;
+    display: none;
+  }
+  .containerTabuleiro{
+    display: flex;
+    justify-content: center;
   }
   .tabuleiro td {
     width: 50px;
@@ -32,6 +37,7 @@
   #teclado {
     margin-top: 20px;
     text-align: center;
+    display: none;
   }
   .tecla {
     display: inline-block;
@@ -39,5 +45,16 @@
     height: 40px;
     margin: 5px;
     border: 1px solid black;
+    cursor: pointer;
+  }
+
+  #instrucoes{
+    text-align: center; 
+    font-weight: bold;
+  }
+
+  #iniciarJogo{
+    display: block; 
+    margin: 0 auto;
     cursor: pointer;
   }

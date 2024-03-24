@@ -1,5 +1,7 @@
-let currentRow = 0;
+
+  let currentRow = 0;
   let currentCol = 0;
+  let tentativas = 5;
 
   const palavras = ["HTML", "CSS", "JavaScript", "DOM", "API", "Framework", "Bootstrap", "React", "Angular", "Vue", "Node.js", "Express", "MongoDB", "SQL", "REST", "HTTP", "AJAX", "JSON", "Responsive", "Git"];
 
@@ -50,11 +52,13 @@ let currentRow = 0;
       });
       alert("Você acertou!");
     } else {
-      celulas.forEach(function(celula) {
-        celula.classList.remove("acerto");
-        celula.classList.add("erro");
-      });
-      alert("Você errou! Tente novamente.");
+      tentativas--;
+      if (tentativas <= 0) {
+        alert("Game Over!");
+        reiniciarJogo();
+      } else {
+        alert("Você errou! Tente novamente. Tentativas restantes: " + tentativas);
+      }
     }
   }
 
@@ -63,7 +67,7 @@ let currentRow = 0;
     const celulas = tabuleiro.querySelectorAll("td");
     const index = currentRow * columns + currentCol;
     celulas[index].textContent = letra;
-    if (currentCol <columns - 1) {
+    if (currentCol < columns - 1) {
       currentCol++;
     } else {
       currentCol = 0;
@@ -89,6 +93,20 @@ let currentRow = 0;
       celulas[index].textContent = "";
       atualizarCursor();
     }
+  }
+
+  function reiniciarJogo() {
+    tentativas = 5;
+    const tabuleiro = document.getElementById("tabuleiro");
+    const celulas = tabuleiro.querySelectorAll("td");
+    celulas.forEach(function(celula) {
+      celula.textContent = "";
+      celula.classList.remove("acerto");
+      celula.classList.remove("erro");
+    });
+    currentRow = 0;
+    currentCol = 0;
+    atualizarCursor();
   }
 
   window.onload = criarTabuleiro;
@@ -123,4 +141,11 @@ let currentRow = 0;
     } else if (key === "ENTER") {
       verificarPalavra();
     }
+  });
+
+  document.getElementById("iniciarJogo").addEventListener("click", function() {
+    document.getElementById("instrucoes").style.display = "block";
+    document.getElementById("tabuleiro").style.display = "block";
+    document.getElementById("teclado").style.display = "block";
+    document.getElementById("iniciarJogo").style.display = "none";
   });

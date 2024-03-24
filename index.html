@@ -3,15 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tabuleiro de walber</title>
+<title>LexUFERSA: Desafio de Palavras</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Tabuleiro walber</h1>
-<table class="tabuleiro" id="tabuleiro">
-  <tbody>
-  </tbody>
-</table>
+<h1>LexUFERSA: Desafio de Palavras</h1>
+
+<p id="instrucoes">Bem-vindo ao jogo LexUFERSA: Desafio de Palavras! <br>
+   Neste jogo, você deve encontrar uma palavra relacionada ao desenvolvimento web. Você tem 5 tentativas para inserir a palavra corretamente.</p>
+
+<button id="iniciarJogo">Iniciar Jogo</button>
+<div class="containerTabuleiro">
+  <table class="tabuleiro" id="tabuleiro">
+    <tbody>
+    </tbody>
+  </table>
+</div>
 
 <div id="teclado">
   <div class="tecla" onclick="inserirLetra('Q')">Q</div>
